@@ -17,14 +17,5 @@ public class MenuSystem : MonoBehaviour
     }
 
     // オブジェクトが衝突したとき
-    void OnTriggerEnter(Collider collision)
-    {
-        Debug.Log("Enter: " + collision.gameObject.name); // 衝突先のオブジェクト名を取得
-    }
-
-    // オブジェクトが離れた時
-    void OnCollisionExit(Collision collision)
-    {
-        Debug.Log("Exit: " + collision.gameObject.name); // 衝突していたオブジェクト名を取得
-    }
+   
 }
