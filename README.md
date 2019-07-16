@@ -3,6 +3,6 @@
 
 - 使用した技術
   - 言語：C#
-  - ゲームエンジン:Unity
+  - ゲームエンジン：Unity
   - IDE：Visual Studio2019
-  - 使用デバイス:Kinect v2
+  - 使用デバイス：Kinect v2
