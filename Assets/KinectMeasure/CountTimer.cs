@@ -12,6 +12,8 @@ public class CountTimer : MonoBehaviour
     //動的カウントテキスト用のオブジェクト
     public GameObject Timer = null;
 
+    float NowTime = 7;
+
     //身長
     List<Single> HeightList = new List<Single>();  
     public static Single Height = -1;
@@ -44,8 +46,8 @@ public class CountTimer : MonoBehaviour
 
         //カウントダウン
         Text Timer_text = Timer.GetComponent<Text>();
-        int NowTime = (int)(7.0f - Time.time);
-        Timer_text.text = "残り時間" + NowTime + "秒";
+        NowTime -= Time.deltaTime;
+        Timer_text.text = "残り時間" + (int)NowTime + "秒";
         //シーン切り替え
         if (NowTime <=0)
         {
