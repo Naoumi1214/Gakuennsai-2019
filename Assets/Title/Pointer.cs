@@ -25,10 +25,11 @@ public class Pointer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       /*
         //マウスの場合
-       this.screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        this.screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 a = new Vector3 (Input.mousePosition.x,Input.mousePosition.y,screenPoint.z);
-        transform.position = Camera.main.ScreenToWorldPoint (a);
+        transform.position = Camera.main.ScreenToWorldPoint (a);*/
 
         //重なりの判定
         if (Physics.Raycast(transform.position, Vector3.down, out Hit))
@@ -43,9 +44,9 @@ public class Pointer : MonoBehaviour
         }
 
       
-
+        
         //Kinectを使用した場合
-        /*if (kinecter.KinectUpdate())
+        if (kinecter.KinectUpdate())
         {
             Single[] righthand = kinecter.GetPosition();
             if (righthand != null)
@@ -58,7 +59,7 @@ public class Pointer : MonoBehaviour
                 //Debug.Log("transform" + transform.position.x + " " + transform.position.y);
             }
 
-        }*/
+        }
     }// void Update()
 
    
