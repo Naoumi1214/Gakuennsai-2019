@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pointer : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Pointer : MonoBehaviour
     Vector3 screenPoint;
     // 位置座標
     private Vector3 position;
+
+    private RaycastHit Hit;
 
     //Kinevt関係
     Kinecter kinecter;
@@ -22,7 +25,27 @@ public class Pointer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (kinecter.KinectUpdate())
+        //マウスの場合
+       this.screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 a = new Vector3 (Input.mousePosition.x,Input.mousePosition.y,screenPoint.z);
+        transform.position = Camera.main.ScreenToWorldPoint (a);
+
+        //重なりの判定
+        if (Physics.Raycast(transform.position, Vector3.down, out Hit))
+        {
+
+            Debug.Log(Hit.collider.name);//デバッグログにヒットした場所を出す
+            if (Hit.collider.name.Equals("StartButton"))
+            {
+                SceneManager.LoadScene("KinectSearch");
+            }
+
+        }
+
+      
+
+        //Kinectを使用した場合
+        /*if (kinecter.KinectUpdate())
         {
             Single[] righthand = kinecter.GetPosition();
             if (righthand != null)
@@ -35,7 +58,7 @@ public class Pointer : MonoBehaviour
                 //Debug.Log("transform" + transform.position.x + " " + transform.position.y);
             }
 
-        }
+        }*/
     }// void Update()
 
    
