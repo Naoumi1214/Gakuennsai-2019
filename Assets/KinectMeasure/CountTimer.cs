@@ -12,7 +12,7 @@ public class CountTimer : MonoBehaviour
     //動的カウントテキスト用のオブジェクト
     public GameObject Timer = null;
 
-    float NowTime = 7;
+    float NowTime = 6;
 
     //身長
     List<Single> HeightList = new List<Single>();  

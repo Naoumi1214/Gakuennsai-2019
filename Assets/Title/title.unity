@@ -183,7 +183,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 1440972255}
   m_PlaneDistance: 3
-  m_PixelPerfect: 1
+  m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -921,7 +921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8490566, g: 0.40965462, b: 0.31639373, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -935,13 +935,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 200
-    m_Alignment: 0
-    m_AlignByGeometry: 0
+    m_Alignment: 1
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: " JUMP JUMP\uFF08\u4EEE\uFF09"
+  m_Text: "\u98DB\u3000\u3079\uFF08\u4EEE\uFF09"
 --- !u!222 &2032536508
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -962,6 +962,6 @@ MonoBehaviour:
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.745283, g: 0.2214756, b: 0.25436318, a: 0.5}
+  m_EffectColor: {r: 1, g: 0, b: 0.12319422, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
