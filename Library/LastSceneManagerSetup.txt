@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Title/title.unity
+- path: Assets/wada/Title/title.unity
   isLoaded: 1
   isActive: 1

@@ -6,6 +6,7 @@ public class BackgroundController : MonoBehaviour
 {
     float width; //背景のサイズ
     float leftOffset=-0.6f;
+    float rightOffset = 1.6f;
     Transform bgTfm; //背景の座標
     int spriteCount=2; //回り込む背景の枚数
     void Start()
@@ -22,6 +23,10 @@ public class BackgroundController : MonoBehaviour
         if (myViewport.x<leftOffset)
         {
             bgTfm.position += Vector3.right * width * spriteCount;
+        }
+        else if (rightOffset<myViewport.x)
+        {
+            bgTfm.position -= Vector3.right * width * spriteCount;
         }
     }
 }
