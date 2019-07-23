@@ -21,6 +21,7 @@ public class PlayerAnimation : MonoBehaviour
             {
                 animator.SetBool("Run", true);
                 animator.SetBool("Down", false);
+                animator.SetBool("Idle",false); //new
             }
         }
 
@@ -50,6 +51,7 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("Up", false);
             animator.SetBool("Down", false);
             animator.SetBool("Run", false);
+
         }
         
     }

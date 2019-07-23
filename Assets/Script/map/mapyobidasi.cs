@@ -9,11 +9,14 @@ public class mapyobidasi : MonoBehaviour
     int count = 2;
     int i = 0,w1=100,w2=100,w3=100;
     bool f = true;
-    // Start is called before the first frame update
-    void Start()
+    private Vector2 lastMapPos; //最後のマップの座標
+
+    void Awake()
     {
+        Vector3 idou = new Vector3();
+        Vector3 tmp = new Vector3();
         //while (this.i != maparray.Length)
-        while(this.i != 30)
+        while(this.i != 8)
         {
             if (maparray.Length != 1)
             {
@@ -39,18 +42,26 @@ public class mapyobidasi : MonoBehaviour
                     }
                 } while (f);
             }
-            Vector3 tmp = GameObject.Find("1").transform.position;
-            Vector3 idou = new Vector3(tmp.x + 32 * (count - 1), tmp.y + 20, tmp.z);
-            Quaternion q = new Quaternion();
-            q = Quaternion.identity;
+            tmp = GameObject.Find("1").transform.position;
+            idou = new Vector3(tmp.x + 32 * (count - 1), tmp.y + 20, tmp.z);
+            //q消す
             Instantiate(maparray[number], idou, Quaternion.identity);
             this.count++;
             i++;
         }
+        GameObject goalObj = (GameObject)Resources.Load("Goal");
+        Vector3 goalPos = new Vector3(idou.x + 32, tmp.y, tmp.z);
+        Instantiate(goalObj, goalPos, Quaternion.identity);
+        lastMapPos = new Vector2(idou.x+32,tmp.y); //new
     }
 
-    // Update is called once per frame
     void Update()
     {
+
+    }
+
+    public Vector2 GetLastMapPos()
+    {
+        return lastMapPos;
     }
 }

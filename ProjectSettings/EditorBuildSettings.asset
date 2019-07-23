@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/main.unity
     guid: d8c897adc533b55409402d070e6b79b5
+  - enabled: 1
+    path: Assets/wada/Goal/goal.unity
+    guid: 70720ef828d8d9b499140473975baff2
   m_configObjects: {}

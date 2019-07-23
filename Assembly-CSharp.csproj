@@ -62,7 +62,13 @@
   <ItemGroup>
     <Compile Include="Assets\Script\BackgroundController.cs" />
     <Compile Include="Assets\Script\CameraController.cs" />
+    <Compile Include="Assets\Script\EnemyMayAppearController.cs" />
+    <Compile Include="Assets\Script\fade\gamein.cs" />
+    <Compile Include="Assets\Script\fade\gameover.cs" />
+    <Compile Include="Assets\Script\fade\gameoverText.cs" />
+    <Compile Include="Assets\Script\fade\rescount.cs" />
     <Compile Include="Assets\Script\hp\HPController.cs" />
+    <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Script\ItemController.cs" />
     <Compile Include="Assets\Script\map\death.cs" />
     <Compile Include="Assets\Script\map\mapyobidasi.cs" />
@@ -75,6 +81,9 @@
     <Compile Include="Assets\Script\player\PlayerItem.cs" />
     <Compile Include="Assets\Script\Policeman.cs" />
     <Compile Include="Assets\Script\respawn.cs" />
+    <Compile Include="Assets\Script\TransitionGoal.cs" />
+    <Compile Include="Assets\Script\WhiteOutController.cs" />
+    <Compile Include="Assets\wada\Goal\BackSystem.cs" />
     <Compile Include="Assets\wada\KinectMeasure\CountTimer.cs" />
     <Compile Include="Assets\wada\KinectView\Scripts\BodySourceManager.cs" />
     <Compile Include="Assets\wada\KinectView\Scripts\BodySourceView.cs" />
@@ -87,6 +96,7 @@
     <Compile Include="Assets\wada\KinectView\Scripts\InfraredSourceView.cs" />
     <Compile Include="Assets\wada\KinectView\Scripts\MultiSourceManager.cs" />
     <Compile Include="Assets\wada\script2\KinectController.cs" />
+    <Compile Include="Assets\wada\script2\PlayerAudioController.cs" />
     <Compile Include="Assets\wada\Standard Assets\CameraIntrinsics.cs" />
     <Compile Include="Assets\wada\Standard Assets\CollectionMap.cs" />
     <Compile Include="Assets\wada\Standard Assets\EventPump.cs" />

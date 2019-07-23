@@ -31,7 +31,7 @@ public class PlayerHP : MonoBehaviour
             bool isMuteki = player.GetMuteki();
             Debug.Log(isMuteki);
 
-            if (!(rb2d.velocity.y < 0)&&!isMuteki) //new
+            if (!(rb2d.velocity.y < 0)&&!isMuteki)
             {
                 hpCtl.DestroyHP();
             }

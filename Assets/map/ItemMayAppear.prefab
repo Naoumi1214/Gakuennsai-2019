@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6596966420418708991}
+  - component: {fileID: 2123815198115355791}
   m_Layer: 0
-  m_Name: item may appear
+  m_Name: ItemMayAppear
   m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,3 +31,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2123815198115355791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639887829254515026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4961929fe42b74c4f8c44c49cf81e58b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Itemarray:
+  - {fileID: 3506219283153338718, guid: 4647bcb308b7db040a91a1162f925037, type: 3}
+  - {fileID: 3663560098989593439, guid: 4e572d4f7ba259840866093b83c2db51, type: 3}
+  - {fileID: 8827609150896721725, guid: bcf65cdf5497db64ab4829897a9a1c98, type: 3}

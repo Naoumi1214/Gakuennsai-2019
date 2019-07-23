@@ -46,7 +46,6 @@ public class HPController : MonoBehaviour
     public void DestroyHP()
     {
         //int hpCnt = transform.childCount - 1;
-
         if (hp>0)
         {
             Destroy(transform.GetChild(hp-1).gameObject);
@@ -58,6 +57,9 @@ public class HPController : MonoBehaviour
         {
             Debug.Log("GameOver");
         }
-
+    }
+    public int Rehp()
+    {
+        return this.hp;
     }
 }

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: e29a3952788784d4393d0d576474765d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - NomalJump: {fileID: 8300000, guid: 55b82c6f7e65fd046b35b90319413d18, type: 3}
+  - BigJump: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

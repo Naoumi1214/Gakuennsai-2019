@@ -21,27 +21,17 @@ public class Policeman : MonoBehaviour
         Vector3 myViewport = Camera.main.WorldToViewportPoint(transform.position);
 
         //カメラ外に行くと消える
-        if (myViewport.x < leftOffset)
+        /*if (myViewport.x < leftOffset)
         {
             Destroy(this.gameObject);
-        }
-
-        /*RaycastHit2D hit = Physics2D.Raycast(new Vector2(0,0),Vector2.up);
-        Debug.DrawRay(pos, new Vector3(0, 0, 100), Color.blue, 1);
-
-        if (hit.collider!=null)
-        {
-            if (hit.collider.gameObject.CompareTag("Player"))
-            {
-                Destroy(this.gameObject);
-            }
         }*/
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //壁にぶつかると画像が反転する
-        if (collision.gameObject.CompareTag("stop")) //new
+        if (collision.gameObject.CompareTag("stop"))
         {
             speed *= -1;
             Vector2 hanten = transform.localScale;
@@ -67,7 +57,7 @@ public class Policeman : MonoBehaviour
             player player = obj.GetComponent<player>();
             bool isMuteki = player.GetMuteki();
 
-            if (collision.relativeVelocity.y<0||isMuteki) //new
+            if (collision.relativeVelocity.y<0||isMuteki)
             {
                 Destroy(this.gameObject);
             }
