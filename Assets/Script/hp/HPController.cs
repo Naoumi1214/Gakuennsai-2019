@@ -8,7 +8,7 @@ public class HPController : MonoBehaviour
     private GameObject hpObj;
     private int hp;
 
-    void Start()
+    void Awake()
     {
         Debug.Log("スタート");
         hpObj = (GameObject)Resources.Load("HP");
