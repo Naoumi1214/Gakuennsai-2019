@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6597927090697384664}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: yuka
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1660,7 +1660,7 @@ PrefabInstance:
     - target: {fileID: 2531733220611764792, guid: 3c8c5b42073ecbb4981ab9edeba82bd4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.5
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 2531733220611764792, guid: 3c8c5b42073ecbb4981ab9edeba82bd4,
         type: 3}
@@ -1735,7 +1735,7 @@ PrefabInstance:
     - target: {fileID: 2531733220611764792, guid: 3c8c5b42073ecbb4981ab9edeba82bd4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.5
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 2531733220611764792, guid: 3c8c5b42073ecbb4981ab9edeba82bd4,
         type: 3}

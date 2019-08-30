@@ -15,7 +15,8 @@ public class ItemController : MonoBehaviour
     //触れたアイテムを表示する
     public void SetItem(string itemName)
     {
-        GameObject Muteki = Instantiate(ItemObject[itemName],transform);
+        Debug.Log(itemName);
+        Instantiate(ItemObject[itemName],transform);
     }
 
     public void LoseItem()

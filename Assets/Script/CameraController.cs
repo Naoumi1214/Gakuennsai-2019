@@ -17,12 +17,11 @@ public class CameraController : MonoBehaviour
         GameObject Mapyobidasi = GameObject.Find("Mapyobidasi");
         mapyobidasi mapyobidasi = Mapyobidasi.GetComponent<mapyobidasi>();
         lastMapPos = mapyobidasi.GetLastMapPos();
-        Debug.Log("ラストマップ"+lastMapPos);
     }
 
     void Update()
     {
-        if (player.transform.position.x>bgPos.x&&player.transform.position.x<=lastMapPos.x)　//ステージ最後に当てはまらないので改良の必要あり
+        if (player.transform.position.x>bgPos.x&&player.transform.position.x<=lastMapPos.x)
         {
             Vector3 p_position = player.transform.position;
             Vector3 c_position = transform.position;

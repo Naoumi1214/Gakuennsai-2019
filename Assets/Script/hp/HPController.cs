@@ -8,10 +8,11 @@ public class HPController : MonoBehaviour
     private GameObject hpObj;
     private int hp;
 
-    void Start()
+    void Awake()
     {
         Debug.Log("スタート");
         hpObj = (GameObject)Resources.Load("HP");
+        Debug.Log("1:hpObj="+hpObj);
     }
 
     //体力の初期値の設定
@@ -34,6 +35,7 @@ public class HPController : MonoBehaviour
         //現在の体力分表示する
         for (int i = 0; i < this.hp; i++)
         {
+            Debug.Log("2:hpObj=" + hpObj);
             GameObject HP = Instantiate(hpObj, transform);
             HP.GetComponent<RawImage>().enabled=true;
 

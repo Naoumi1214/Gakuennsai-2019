@@ -28,10 +28,8 @@ public class WhiteOutController : MonoBehaviour
         {
             texture.color = new Color(red, green, blue, alfa);
             alfa += speed;
-            if (alfa>1)
-            {
-                SceneManager.LoadScene("goal");
-            }
+            //ここでゴール画面に遷移
+            SceneManager.LoadScene("goal");
         }
     }
 

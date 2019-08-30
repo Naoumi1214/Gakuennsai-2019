@@ -8,17 +8,15 @@ public class player : MonoBehaviour
     bool runnable = true;
     public float flap = 500f;
     Rigidbody2D rb2d;
-    //bool jump = true;
-    bool jump = false;
+    bool isGround = true; //trueであればジャンプ可能
     bool stst; //リスポーン時にfalseで止まる
     int coinCnt=0; //コインの枚数
     private bool isMuteki;
     [SerializeField]
     private ItemController itemCtl;
 
-    // Use this for initialization
-
     KinectController kinect;
+    // Use this for initialization
     void Start()
     {
         //コンポーネント読み込み
@@ -37,43 +35,51 @@ public class player : MonoBehaviour
             if (runnable)
             {
                 //自動で移動
-                this.gameObject.transform.Translate(0.07f, 0, 0);
+                this.gameObject.transform.Translate(0.1f, 0, 0);
+            }
+            else
+            {
+                Debug.Log("停止中");
             }
      
         }
 
         //ジャンプ判定
-        if ((Input.GetKeyDown("space") || kinect.getJumping()) && !jump)
+        if ((Input.GetKeyDown("space") || kinect.getJumping()) && isGround && rb2d.velocity.y == 0)
         {
-            jump = true;
-
-            //大ジャンプ
-            if (true)
-            {
-                rb2d.AddForce(Vector2.up * flap);
-            }
-            
+            isGround = false;
+            rb2d.AddForce(Vector2.up * flap);
         }
-        if (jump && rb2d.velocity.y < 0) //ジャンプ制御
+
+        //Debug.Log(isGround);
+
+        if (rb2d.velocity.y < 0) //ジャンプ制御
         {
             Vector2 v = rb2d.velocity;
-            v.y -= 0.06f;
-            rb2d.velocity = v;
+
+            if (v.y > -10.0f)
+            {
+                v.y -= 0.6f;
+                rb2d.velocity = v;
+            }
+            
         }
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("stop"))
+        if(other.gameObject.CompareTag("floor"))
         {
-            runnable = false;
+            isGround = true;
+            stst = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("stop"))
+        if (other.gameObject.CompareTag("stop_left"))
         {
+            Debug.Log("壁から離れる");
             runnable = true;
         }
     }
@@ -84,6 +90,14 @@ public class player : MonoBehaviour
         if (other.gameObject.CompareTag("death"))
         {
             stst = false;
+            isGround = false;
+        }
+
+        if (other.gameObject.CompareTag("stop_left"))
+        {
+            Debug.Log("壁にぶつかる");
+            runnable = false;
+            //rb2d.velocity = Vector2.zero;
         }
 
         /*if (other.gameObject.name.Equals("GoalGate"))
@@ -92,21 +106,6 @@ public class player : MonoBehaviour
             Destroy(this.gameObject);
         }*/
     }
-
-
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        GameObject obj = other.gameObject;
-
-        if (obj.CompareTag("yuka"))
-        {
-            jump = false;
-            stst = true;
-        }
-
-    }
-
-    //exit消す
 
     public void CoinCounter()
     {
@@ -117,7 +116,7 @@ public class player : MonoBehaviour
     public void MutekiTime()
     {
         isMuteki = true;
-        Debug.Log("無敵だあああ");
+        Debug.Log("無敵");
         itemCtl.SetItem("Muteki");
         Invoke("MutekiEnd", 10);
 
@@ -126,7 +125,7 @@ public class player : MonoBehaviour
     public void MutekiEnd()
     {
         isMuteki = false;
-        Debug.Log("終わりだあああ");
+        Debug.Log("無敵解除");
         itemCtl.LoseItem();
     }
 

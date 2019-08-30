@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7D1DA864-5D0D-CA60-B51E-2D47F5B1374E}</ProjectGuid>
+    <ProjectGuid>{B2B58FB2-4462-6B0C-A872-40DD957E5FE0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\BackgroundController.cs" />
     <Compile Include="Assets\Script\CameraController.cs" />
+    <Compile Include="Assets\Script\Detection.cs" />
     <Compile Include="Assets\Script\EnemyMayAppearController.cs" />
     <Compile Include="Assets\Script\fade\gamein.cs" />
     <Compile Include="Assets\Script\fade\gameover.cs" />
@@ -72,134 +73,43 @@
     <Compile Include="Assets\Script\ItemController.cs" />
     <Compile Include="Assets\Script\map\death.cs" />
     <Compile Include="Assets\Script\map\mapyobidasi.cs" />
-    <Compile Include="Assets\Script\nyokki\mapnyokinyoki.cs" />
-    <Compile Include="Assets\Script\nyokki\nyokinyokiEnd.cs" />
-    <Compile Include="Assets\Script\nyokki\nyokinyokiStart.cs" />
     <Compile Include="Assets\Script\player\player.cs" />
     <Compile Include="Assets\Script\player\PlayerAnimation.cs" />
+    <Compile Include="Assets\Script\player\PlayerAudio.cs" />
     <Compile Include="Assets\Script\player\PlayerHP.cs" />
     <Compile Include="Assets\Script\player\PlayerItem.cs" />
     <Compile Include="Assets\Script\Policeman.cs" />
     <Compile Include="Assets\Script\respawn.cs" />
+    <Compile Include="Assets\Script\testscript\PolicemanChild.cs" />
+    <Compile Include="Assets\Script\testscript\TestCamera.cs" />
+    <Compile Include="Assets\Script\testscript\testplayer.cs" />
+    <Compile Include="Assets\Script\testscript\testPlayerHP.cs" />
+    <Compile Include="Assets\Script\testscript\testPlayerItem.cs" />
+    <Compile Include="Assets\Script\testscript\testPoliceman.cs" />
     <Compile Include="Assets\Script\TransitionGoal.cs" />
     <Compile Include="Assets\Script\WhiteOutController.cs" />
     <Compile Include="Assets\wada\Goal\BackSystem.cs" />
     <Compile Include="Assets\wada\KinectMeasure\CountTimer.cs" />
-    <Compile Include="Assets\wada\KinectView\Scripts\BodySourceManager.cs" />
-    <Compile Include="Assets\wada\KinectView\Scripts\BodySourceView.cs" />
-    <Compile Include="Assets\wada\KinectView\Scripts\ColorSourceManager.cs" />
-    <Compile Include="Assets\wada\KinectView\Scripts\ColorSourceView.cs" />
-    <Compile Include="Assets\wada\KinectView\Scripts\DepthSourceManager.cs" />
-    <Compile Include="Assets\wada\KinectView\Scripts\DepthSourceView.cs" />
-    <Compile Include="Assets\wada\KinectView\Scripts\DisableOnStart.cs" />
-    <Compile Include="Assets\wada\KinectView\Scripts\InfraredSourceManager.cs" />
-    <Compile Include="Assets\wada\KinectView\Scripts\InfraredSourceView.cs" />
-    <Compile Include="Assets\wada\KinectView\Scripts\MultiSourceManager.cs" />
     <Compile Include="Assets\wada\script2\KinectController.cs" />
     <Compile Include="Assets\wada\script2\PlayerAudioController.cs" />
-    <Compile Include="Assets\wada\Standard Assets\CameraIntrinsics.cs" />
-    <Compile Include="Assets\wada\Standard Assets\CollectionMap.cs" />
-    <Compile Include="Assets\wada\Standard Assets\EventPump.cs" />
-    <Compile Include="Assets\wada\Standard Assets\ExceptionHelper.cs" />
-    <Compile Include="Assets\wada\Standard Assets\INativeWrapper.cs" />
-    <Compile Include="Assets\wada\Standard Assets\KinectBuffer.cs" />
-    <Compile Include="Assets\wada\Standard Assets\KinectSpecialCases.cs" />
-    <Compile Include="Assets\wada\Standard Assets\NativeObjectCache.cs" />
-    <Compile Include="Assets\wada\Standard Assets\NativeWrapper.cs" />
-    <Compile Include="Assets\wada\Standard Assets\SmartGCHandle.cs" />
-    <Compile Include="Assets\wada\Standard Assets\ThreadSafeDictionary.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Data\PropertyChangedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\Activity.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\Appearance.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\AudioBeam.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\AudioBeamFrame.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\AudioBeamFrameArrivedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\AudioBeamFrameList.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\AudioBeamFrameReader.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\AudioBeamFrameReference.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\AudioBeamMode.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\AudioBeamSubFrame.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\AudioBodyCorrelation.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\AudioSource.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\Body.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\BodyFrame.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\BodyFrameArrivedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\BodyFrameReader.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\BodyFrameReference.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\BodyFrameSource.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\BodyIndexFrame.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\BodyIndexFrameArrivedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\BodyIndexFrameReader.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\BodyIndexFrameReference.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\BodyIndexFrameSource.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\CameraSpacePoint.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\ColorCameraSettings.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\ColorFrame.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\ColorFrameArrivedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\ColorFrameReader.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\ColorFrameReference.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\ColorFrameSource.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\ColorImageFormat.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\ColorSpacePoint.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\CoordinateMapper.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\CoordinateMappingChangedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\DepthFrame.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\DepthFrameArrivedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\DepthFrameReader.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\DepthFrameReference.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\DepthFrameSource.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\DepthSpacePoint.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\DetectionResult.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\Expression.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\FrameCapturedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\FrameCapturedStatus.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\FrameDescription.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\FrameEdges.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\FrameSourceTypes.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\HandState.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\InfraredFrame.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\InfraredFrameArrivedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\InfraredFrameReader.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\InfraredFrameReference.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\InfraredFrameSource.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\IsAvailableChangedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\Joint.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\JointOrientation.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\JointType.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\KinectAudioCalibrationState.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\KinectCapabilities.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\KinectSensor.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\KinectUnityAddinUtils.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\LongExposureInfraredFrame.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\LongExposureInfraredFrameArrivedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\LongExposureInfraredFrameReader.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\LongExposureInfraredFrameReference.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\LongExposureInfraredFrameSource.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\MultiSourceFrame.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\MultiSourceFrameArrivedEventArgs.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\MultiSourceFrameReader.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\MultiSourceFrameReference.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\TrackingConfidence.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\TrackingState.cs" />
-    <Compile Include="Assets\wada\Standard Assets\Windows\Kinect\Vector4.cs" />
     <Compile Include="Assets\wada\Title\ButtonSystem.cs" />
     <Compile Include="Assets\wada\Title\Kinecter.cs" />
     <Compile Include="Assets\wada\Title\MenuSystem.cs" />
     <Compile Include="Assets\wada\Title\Pointer.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/yukku/Documents/persentTest/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/yukku/Documents/New Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/yukku/Documents/persentTest/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/yukku/Documents/New Unity Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/yukku/Documents/persentTest/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/yukku/Documents/New Unity Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/yukku/Documents/persentTest/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/yukku/Documents/New Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/yukku/Documents/persentTest/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/yukku/Documents/New Unity Project/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -403,13 +313,13 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/yukku/Documents/persentTest/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/yukku/Documents/New Unity Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/yukku/Documents/persentTest/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/yukku/Documents/New Unity Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/yukku/Documents/persentTest/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/yukku/Documents/New Unity Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -756,6 +666,12 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{79391AC5-8752-B4CC-F33F-BB9EB1094377}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

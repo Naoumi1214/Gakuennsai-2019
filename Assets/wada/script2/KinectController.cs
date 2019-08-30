@@ -99,8 +99,6 @@ public class KinectController
             if (body.IsTracked)
             {
 
-
-
                 foreach (Windows.Kinect.Joint joint in body.Joints.Values)
                 {
 
@@ -123,20 +121,7 @@ public class KinectController
                         }
 
 
-                        /*
-                        //骨格情報表示
-                        switch (joint.TrackingState)
-                        {
-                            case TrackingState.Tracked:
-                                Debug.Log(joint.JointType + "は正しく計測されており、" + "X:" + joint.Position.X + ", Y:" + joint.Position.Y + ", Z:" + joint.Position.Z);
-                                break;
-                            case TrackingState.Inferred:
-                                Debug.Log(joint.JointType + "は位置を推測しており、その値は" + "X:" + joint.Position.X + ", Y:" + joint.Position.Y + ", Z:" + joint.Position.Z);
-                                break;
-                            case TrackingState.NotTracked:
-                                Debug.Log(joint.JointType + "は位置を測定できませんでした。");
-                                break;
-                        }*/
+                      
                     }
 
                 }

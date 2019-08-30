@@ -31,7 +31,7 @@ public class Policeman : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //壁にぶつかると画像が反転する
-        if (collision.gameObject.CompareTag("stop"))
+        if (collision.gameObject.CompareTag("stop_left")||collision.gameObject.CompareTag("stop_right"))
         {
             speed *= -1;
             Vector2 hanten = transform.localScale;
@@ -45,24 +45,4 @@ public class Policeman : MonoBehaviour
         }
       
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        GameObject obj = collision.gameObject;
-
-        //上からPlayerに踏まれたら消える
-        if (collision.transform.CompareTag("Player"))
-        {
-            Debug.Log("hit");
-            player player = obj.GetComponent<player>();
-            bool isMuteki = player.GetMuteki();
-
-            if (collision.relativeVelocity.y<0||isMuteki)
-            {
-                Destroy(this.gameObject);
-            }
-        }
-        
-    }
-
 }

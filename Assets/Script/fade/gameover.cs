@@ -57,6 +57,7 @@ public class gameover : MonoBehaviour
         {
             /*アルファ値は1になる.*/
             alpha = 1f;
+            //タイトルに戻る
             SceneManager.LoadScene("title");
 
         }

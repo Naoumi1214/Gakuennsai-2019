@@ -20,10 +20,10 @@ public class PlayerItem : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         GameObject obj = other.gameObject;
-        Debug.Log(obj.name);
 
         if (other.gameObject.CompareTag("item"))
         {
+            Debug.Log(obj.name);
             player player;
 
             switch (obj.name)
@@ -44,6 +44,7 @@ public class PlayerItem : MonoBehaviour
                     //無敵の重複はしない
                     if (!isMuteki)
                     {
+                        Debug.Log(player.gameObject);
                         player.MutekiTime();
                     }
                     

@@ -9,7 +9,7 @@ public class TransitionGoal : MonoBehaviour
 
     private void Start()
     {
-        GameObject WhiteOut = GameObject.Find("Canvas/Panel/WhiteOut");
+        GameObject WhiteOut = GameObject.Find("Canvas/Goal/WhiteOut");
         Debug.Log("ホワイトアウト"+WhiteOut);
         WhiteOutCtl = WhiteOut.GetComponent<WhiteOutController>();
         Debug.Log("ホワイトアウトコントローラー"+WhiteOutCtl);
